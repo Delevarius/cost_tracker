@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import '../style.css';
 type Props = {
   note: String,
   cost: Number,
@@ -10,7 +11,7 @@ type Props = {
 };
 
 const ItemsCreation = React.memo(({ note, cost, updateCost, updateNote, saveItem}: Props) => (
-    <div>
+    <div className="item_creation_wrapper">
       <div>
         <div>Note</div>
         <input

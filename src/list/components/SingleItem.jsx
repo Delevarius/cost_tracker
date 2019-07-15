@@ -2,15 +2,16 @@
 
 import React from 'react';
 import { Item } from '../../lib/types';
+import '../style.css';
 
 type Props = {
   item: Item
 };
 
 const SingleItem = React.memo(({ item }: Props) => (
-  <div>
+  <div className="single_item">
     <div>
-      <div>Note:</div>
+      <div>Cost:</div>
       <div>
         {item.cost}
       </div>

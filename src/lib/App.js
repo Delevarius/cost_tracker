@@ -1,19 +1,9 @@
 // @flow
 
 import React, {useState} from 'react';
-import { ItemsList } from './types';
 import CostList from '../list';
 import ItemCreation from '../item';
 import './styles.css';
-
-// type Hooks = {
-//   itemsList: ItemsList,
-//   note: string,
-//   cost: number,
-//   updateNote: () => {},
-//   updateCost: () => {},
-//   saveItem: () => {},
-// };
 
 const App = React.memo(() => {
   const [note, updateNote] = useState('');
