@@ -1,3 +1,3 @@
-import ItemsList from './components/ItemsList';
+import CostList from './components/CostList';
 
-export default ItemsList;
+export default CostList;
