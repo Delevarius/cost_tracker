@@ -1,16 +1,26 @@
 // @flow
 
-import React from 'react';
+import React, { memo } from 'react';
+import hat from 'hat';
+import { Categories } from '../../lib/types';
 import '../style.css';
+
 type Props = {
   note: String,
   cost: Number,
+  category: String,
+  categories: Categories, 
   updateNote: () => {},
   updateCost: () => {},
   saveItem: () => {},
+  updateCategory: () => {},
 };
 
-const ItemsCreation = React.memo(({ note, cost, updateCost, updateNote, saveItem}: Props) => (
+const ItemsCreation = memo(({
+    note, cost, updateCost,
+    updateNote, saveItem, category,
+    categories, updateCategory
+  }: Props) => (
     <div className="item_creation_wrapper">
       <div>
         <div>Note</div>
@@ -21,6 +31,25 @@ const ItemsCreation = React.memo(({ note, cost, updateCost, updateNote, saveItem
         />
       </div>
       <div>
+        <div>Category</div>
+        <select
+          type="text"
+          value={category}
+          onChange={e => {updateCategory(e.target.value)}}
+        >
+          {
+            categories.map(c => (
+              <option
+                value={c}
+                key={hat()}
+              >
+                {c}
+              </option>
+            ))
+          }
+        </select>
+      </div>
+      <div>
         <div>Cost</div>      
         <input
           type="number"
@@ -29,7 +58,7 @@ const ItemsCreation = React.memo(({ note, cost, updateCost, updateNote, saveItem
         />
       </div>
       <button
-        onClick={() => saveItem({note, cost})}
+        onClick={() => saveItem({note, category, cost})}
       >
         Save
       </button>

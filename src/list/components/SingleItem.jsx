@@ -10,17 +10,14 @@ type Props = {
 
 const SingleItem = React.memo(({ item }: Props) => (
   <div className="single_item">
-    <div>
-      <div>Cost:</div>
-      <div>
-        {item.cost}
-      </div>
+    <div className="single_item_cell">
+      {item.cost}
     </div>
-    <div>
-      <div>Note:</div>
-      <div>
-        {item.note}
-      </div>
+    <div className="single_item_cell">
+      {item.category}
+    </div>
+    <div className="single_item_cell">
+      {item.note}
     </div>
   </div>
 ));

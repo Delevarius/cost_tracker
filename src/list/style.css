@@ -1,5 +1,10 @@
 .single_item {
   display: flex;
 }
-.list {
+.single_item_cell {
+  padding: 5px;
+}
+.list_wraper {
+  display: flex;
+  flex-direction: column; 
 }
