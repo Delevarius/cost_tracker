@@ -11,6 +11,10 @@ type Props = {
   categories: Categories
 };
 
+// total is just a simple sum of all costs
+
+// the second part cycless through each category and sums it up
+
 const Statistics = memo(({ itemsList, categories }: Props) => (
   <div className="statistics_wrapper">
     <div className="total_cost">
@@ -25,7 +29,7 @@ const Statistics = memo(({ itemsList, categories }: Props) => (
           {category} :
           {
             itemsList.filter(item => item.category === category)
-            .reduce((reduced, item) => item.cost, 0)
+            .reduce((reduced, item) => reduced + item.cost, 0)
           }
         </div>
       ))
