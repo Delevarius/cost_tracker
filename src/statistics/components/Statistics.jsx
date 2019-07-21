@@ -3,6 +3,8 @@
 import React, { memo } from 'react';
 import { ItemsList, Categories } from '../../lib/types';
 import hat from 'hat';
+import '../style.css';
+
 
 type Props = {
   itemsList: ItemsList,
@@ -10,7 +12,7 @@ type Props = {
 };
 
 const Statistics = memo(({ itemsList, categories }: Props) => (
-  <div>
+  <div className="statistics_wrapper">
     <div className="total_cost">
       Total:
       {
@@ -19,7 +21,7 @@ const Statistics = memo(({ itemsList, categories }: Props) => (
     </div>
     {
       categories.map(category => (
-        <div key={hat()}>
+        <div key={hat()} className="total_cost">
           {category} :
           {
             itemsList.filter(item => item.category === category)

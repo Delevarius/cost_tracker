@@ -22,16 +22,16 @@ const ItemsCreation = memo(({
     categories, updateCategory
   }: Props) => (
     <div className="item_creation_wrapper">
-      <div>
-        <div>Note</div>
+      <div className="item_creation_unit">
+        <div>Cost</div>      
         <input
-          type="text"
-          value={note}
-          className="note_input"
-          onChange={e => {updateNote(e.target.value)}}
+          type="number"
+          value={cost}
+          className="cost_input"
+          onChange={e => {updateCost(Number(e.target.value))}}
         />
       </div>
-      <div>
+      <div className="item_creation_unit">
         <div>Category</div>
         <select
           type="text"
@@ -51,13 +51,13 @@ const ItemsCreation = memo(({
           }
         </select>
       </div>
-      <div>
-        <div>Cost</div>      
+      <div className="item_creation_unit">
+        <div>Note</div>
         <input
-          type="number"
-          value={cost}
-          className="cost_input"
-          onChange={e => {updateCost(Number(e.target.value))}}
+          type="text"
+          value={note}
+          className="note_input"
+          onChange={e => {updateNote(e.target.value)}}
         />
       </div>
       <button

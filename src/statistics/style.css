@@ -1,3 +1,9 @@
-.item_creation_wrapper {
+.total_cost {
   display: flex;
+  justify-content: space-around;
+}
+.statistics_wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column; 
 }

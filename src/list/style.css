@@ -1,10 +1,12 @@
 .single_item {
   display: flex;
+  justify-content: space-around;
 }
 .single_item_cell {
   padding: 5px;
 }
 .list_wraper {
   display: flex;
+  justify-content: space-around;
   flex-direction: column; 
 }
