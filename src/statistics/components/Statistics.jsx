@@ -2,6 +2,8 @@
 
 import React, { memo } from 'react';
 import { ItemsList, Categories } from '../../lib/types';
+import hat from 'hat';
+
 type Props = {
   itemsList: ItemsList,
   categories: Categories
@@ -9,7 +11,7 @@ type Props = {
 
 const Statistics = memo(({ itemsList, categories }: Props) => (
   <div>
-    <div>
+    <div className="total_cost">
       Total:
       {
         itemsList.reduce((reduced,item) => reduced + item.cost ,0)
@@ -17,7 +19,7 @@ const Statistics = memo(({ itemsList, categories }: Props) => (
     </div>
     {
       categories.map(category => (
-        <div>
+        <div key={hat()}>
           {category} :
           {
             itemsList.filter(item => item.category === category)

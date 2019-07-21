@@ -27,6 +27,7 @@ const ItemsCreation = memo(({
         <input
           type="text"
           value={note}
+          className="note_input"
           onChange={e => {updateNote(e.target.value)}}
         />
       </div>
@@ -35,6 +36,7 @@ const ItemsCreation = memo(({
         <select
           type="text"
           value={category}
+          className="category_input"
           onChange={e => {updateCategory(e.target.value)}}
         >
           {
@@ -54,10 +56,12 @@ const ItemsCreation = memo(({
         <input
           type="number"
           value={cost}
+          className="cost_input"
           onChange={e => {updateCost(Number(e.target.value))}}
         />
       </div>
       <button
+        className="save_item"
         onClick={() => saveItem({note, category, cost})}
       >
         Save

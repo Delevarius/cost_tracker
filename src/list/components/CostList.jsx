@@ -12,15 +12,13 @@ type Props = {
 };
 
 const CostList = memo(({ itemsList }: Props) => (
-  <div>
-    <div className="list_wraper">
-      <Header />
-      {
-        itemsList.map(item => (
-          <SingleItem key={hat()} item={item} />
-        ))
-      }  
-    </div>
+  <div className="list_wraper">
+    <Header />
+    {
+      itemsList.map(item => (
+        <SingleItem key={hat()} item={item} />
+      ))
+    }  
   </div>
 ));
 export default CostList;
